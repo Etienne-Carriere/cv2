@@ -1,0 +1,249 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[12pt, a4paper]{awesome-cv}
+
+\usepackage{hyperref}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+% \definecolor{sectiondivider}{HTML}{5D5D5D}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+% \photo{./examples/profile.png}
+\name{Etienne}{CARRIERE}
+\position{Site Reliability Engineer}
+\address{Bourg la Reine, Hauts de Seine, France}
+
+\mobile{(+33)6 95 30 23 34}
+\email{etienne.carriere@gmail.com}
+%\dateofbirth{January 1st, 1970}
+%\homepage{www.posquit0.com}
+%\github{Etienne-Carriere}
+\linkedin{etienne-carriere-cloud}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{medium-id}
+% \kaggle{kaggle-id}
+% \hackerrank{hackerrank-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra information}
+
+%\quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+% Print the header with above personal information
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {Sep 2024}
+  {Etienne CARRIERE~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+
+\newcommand*{\stack}[1]{
+   \textbf{Stack} : #1
+}
+
+\cvsection{Experiences}
+\vspace{-4mm}
+\begin{cventries}
+  \cventry
+    {Senior Software developer} 
+    {Datadog} 
+    {Paris} 
+    {Oct. 2018 - Now} 
+    {
+      \begin{cvitems} 
+	    \item{Develop a load testing services so that, with coordination with chaos engineering services, it is possible to inject load while chaos disruptions are made} 
+		\item{Migration from a python monolith handling more than 2k endpoints and 20k req/s to golang micro-services} 
+		\begin{itemize}
+		  \item{ Migrate the routes handled by our team that serves around 1k req/s}
+		  \item{Support other teams to migrate their routes}
+		\end{itemize}
+		\item{Optimize cloud hosting costs by 30\% on a perimeter of 3 M\$/year}
+		\item{Mentor 2 interns that joined our team at Datadog after their interships} 
+		\item{Prepare with the team manager the quarter plannning of the team}
+		\item{\stack{Kubernetes, Terraform, Datadog, Temporal. Development in Golang and Python}}
+      \end{cvitems}
+    }
+	
+  \cventry
+    {DevOPS Architect} 
+    {Société Générale} 
+    {Paris} 
+    {Oct. 2018 - Aug. 2023} 
+    {
+	  Build a private cloud for internal needs of Societe generale
+	  \vspace{4.0mm}
+      \begin{cvitems} 
+        \item{Design, implement and maintain distributed tracing solution based on Jaeger/Opentracing/ElasticSearch}
+		\item{Define, implement and maintain a Terraform provider for the private cloud : more than 70 resources and 30 datasources}
+		\item{Design an ”Heroku for the project solution” based on Kubernetes for the 20 teams building the private cloud platform}
+		\item{Develop a Kubernetes controllers for cert-manager to integrate our internal PKI API}
+		\item{\stack{Terraform, Kubernetes, Ansible, Jaeger, Opentracing, ElasticSearch, Influx, Flink. Development in Python, Java and Golang. PoC with ClickHouse}}
+      \end{cvitems}
+    }
+	
+  \cventry
+    {(First|Lead) DevOps} 
+    {Datadome} 
+    {Paris} 
+    {Jun. 2017 - Sep. 2018} 
+    {
+	  First devops in a anti scraping/scalping startup. I arrived as 6th engineer
+	  \vspace{4.0mm}
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+        \item { Automate deployment of Datadome infrastructure in 10 AWS regions with Terraform. The first 3 regions were built manually, I automated the deployment on the new regions}
+		\item { Optimize AWS hosting costs of AWS infrastructure by 30\% (right-sizing resources, delete unused resources and optimize application to decrease outgoing network traffic}
+		\item { Management of a mid-sized ElasticSearch cluster (1 billion document in-gested a day / 50 Tbytes stored)}
+		\item {	Development of lowlevel application stack (mainly in Python and golang)}
+		\item { \stack{ AWS, Azure, Ansible, Terraform, Centos, ElasticSearch, Docker, InfluxDB, Flink. Development in Java, Python and Golang}}
+      \end{cvitems}
+    }
+
+  \cventry
+    {DevOps Architect} 
+    {French Ministry of Defense} 
+    {Paris} 
+    {Jan. 2016 - May. 2017} 
+    {
+	 Project \href{https://www.programmevitam.fr/}{Vitam} : Development of an \href{https://github.com/ProgrammeVitam/vitam}{open-source} long term digital archiving solution for French public organisations
+	 \vspace{4.0mm}
+      \begin{cvitems} % Description(s) of tasks/responsibilities
+       \item{ Design of deployment architecture (RPM/Deb packages)}
+	   \item{ Development of a software generating an Archival Package in the SEDA Archival format (XML format used by archivists to handle metadatas)}
+	   \item{ Manage the operational relation with the private cloud provider (Openstack provided by French Ministry of Agriculture)}
+	   \item{ Manage the relation with the ”clients” of the project : Ministry of the Culture, Ministry of the Foreign relations, Ministry of Defence}
+	   \item{ \stack{ Centos, Openstack, Ansible, Docker, MongoDB, ElasticSearch, Kibana, Consul. Development in Java, Python}}
+      \end{cvitems}
+    }
+	
+   \cventry
+    {Technical Architect / Technical Project Manager} 
+    {French Ministry of Finance : Transversal Human Resource ad-hoc structure} 
+    {Paris} 
+    {Jan. 2013 - Dec. 2015} 
+    {
+      \begin{cvitems} 
+        \item {Physical design of 2 datacenters to host the transversal human resource system for public servants}
+		\item {Design and manage the deployment of transversal services (Virtualization,DRP, Audit trail, file exchange service)}
+		\item {Define and maintain the technical framework and the service portfolio}
+		\item {\stack{ RHEL, KVM, F5, Tomcat, HR Access, GLPI, Graylog, Ansible}}
+      \end{cvitems}
+    }
+
+  \cventry
+    {Technical Architect Consultant} 
+    {Solucom (now Wavestone)} 
+    {Paris} 
+    {Oct. 2007 - Dec. 2012} 
+    {
+      \begin{cvitems}
+        \item {Design of technical architecture}
+		\begin{itemize}
+			\item {2011-2012 : Sita (part of Engie) : Define the new HR/Payroll system}
+			\item {2011-2012 : French Ministry of finances : Define a new HR system for public servants}
+			\item {2010-2011 : Cité des Sciences et de l’industrie : Define the new HR/Payroll system}
+			\item {2009-2011 : Crédit Agricole : Design the intranet}
+			\item {2007-2009 : Société Générale : Rework the online banking site}
+		\end{itemize}
+		\item{Technical Audits}
+		\begin{itemize}
+			\item {2011 : Peugeot (part of PSA) : Audit of the aftersales portal}
+			\item {2010 : Snemca (part of Safran) : Audit of differents application}
+			\item {2010 : SFR : Audit of the www.sfr.fr site}
+		\end{itemize}
+		\item {Datacenter relocation : Moving and consolidate european datacenters in a central datacenter}
+      \end{cvitems}
+    }
+\end{cventries}
+
+\cvsection{Education}
+	\vspace{-4mm}	
+	\begin{cventries}
+	  \cventry
+		{Engineer Degree} 
+		{Ecole supérieure d’électricité (Supélec)} % Institution
+		{Gif sur Yvette} 
+		{2004 - 2007} 
+		{
+		  Leading school of engineering in the field of energy,computer science and data processing
+		}
+	  \vspace{4mm}
+	  \cventry
+		{Preparatory years years for the competitive examination for entry in the French ’Grandes Ecoles’} 
+		{Lycée Strasbourg} 
+		{Strasbourg} 
+		{2001 - 2004}
+		{}
+	\end{cventries}
+
+\cvsection{Skills}
+	\begin{cvskills}
+	  \cvskill{IaaS} {AWS, Openstack}
+	  \cvskill{Infra as Code} {Terraform, Ansible}
+	  \cvskill{Container}{Kubernetes, Docker} 
+	  \cvskill{SQL DBMS}{ PostgreSQL, MySQL/MariaDB}
+	  \cvskill{NoSQL DBMS} {ElasticSearch, InfluxDB, Clickhouse}
+	  \cvskill{Programming}{Java,Go, Python} 
+	  \cvskill{Framework/Libraries}{Java : Jetty, hibernate / Go : http.Server,chi,go-migrate / Python : Gunicorn,Flask, Django }
+	\end{cvskills}
+\end{document}
